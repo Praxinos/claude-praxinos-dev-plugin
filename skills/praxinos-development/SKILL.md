@@ -17,7 +17,7 @@ Apply this workflow to UE5 code edits, including C++, C# build tooling, and code
 
 ### Style
 
-- Do not use the `auto` keyword in code you create or modify.
+- Do not use the `auto` keyword in code you create or modify, except to store a lambda.
 - Follow the [Epic C++ Coding Standard](https://dev.epicgames.com/documentation/en-us/unreal-engine/epic-cplusplus-coding-standard-for-unreal-engine) for new and modified code, using the version matching the project when available.
   - Check naming, prefixes, header organization, `UCLASS`/`USTRUCT`/`UPROPERTY` usage, includes, braces, indentation, and comments as applicable.
   - Reconcile local conventions without introducing unrelated formatting changes.
@@ -32,7 +32,7 @@ Apply this workflow to UE5 code edits, including C++, C# build tooling, and code
 When a function would evaluate the same accessor, lookup, or cast more than once to reach the same data (in successive statements, or in a loop condition or body):
 
 - Store the result once in a local variable and reuse it.
-- Use a reference for containers.
+- For containers and strings, use a view (`TConstArrayView`, `FStringView`) when the source returns a reference, and an owning `const` local when it returns by value.
 - Keep separate calls when the result can differ between evaluations: different arguments, data that depends on the loop iteration, or data modified in between.
 
 ### Member order
@@ -42,9 +42,11 @@ Organize members in classes and structs in this order:
 1. Destructor and constructor
 2. Public static methods
 3. Public non-static methods
-4. Private methods
-5. Public attributes
-6. Private attributes
+4. Protected methods
+5. Private methods
+6. Public attributes
+7. Protected attributes
+8. Private attributes
 
 ### Include order
 
@@ -53,6 +55,8 @@ Organize `#include` directives in this order:
 1. The .cpp file's associated header
 2. Unreal headers
 3. Odyssey headers
+
+In headers, the `.generated.h` include stays last.
 
 ## Workflow
 
