@@ -9,8 +9,7 @@ Apply this workflow to UE5 code edits, including C++, C# build tooling, and code
 
 ## General rules
 
-- Use the project's UE version and existing conventions.
-- Keep the work scoped to the user's requested change.
+- Use the project's UE version and existing conventions, without unrelated formatting changes.
 - Preserve the line-ending format (LF or CRLF) required by the repository's Git configuration when editing files.
 
 ## Coding rules
@@ -19,8 +18,6 @@ Apply this workflow to UE5 code edits, including C++, C# build tooling, and code
 
 - Do not use the `auto` keyword in code you create or modify, except to store a lambda.
 - Follow the [Epic C++ Coding Standard](https://dev.epicgames.com/documentation/en-us/unreal-engine/epic-cplusplus-coding-standard-for-unreal-engine) for new and modified code, using the version matching the project when available.
-  - Check naming, prefixes, header organization, `UCLASS`/`USTRUCT`/`UPROPERTY` usage, includes, braces, indentation, and comments as applicable.
-  - Reconcile local conventions without introducing unrelated formatting changes.
 
 ### Documentation
 
@@ -32,7 +29,6 @@ Apply this workflow to UE5 code edits, including C++, C# build tooling, and code
 When a function would evaluate the same accessor, lookup, or cast more than once to reach the same data (in successive statements, or in a loop condition or body):
 
 - Store the result once in a local variable and reuse it.
-- For containers and strings, use a view (`TConstArrayView`, `FStringView`) when the source returns a reference, and an owning `const` local when it returns by value.
 - Keep separate calls when the result can differ between evaluations: different arguments, data that depends on the loop iteration, or data modified in between.
 
 ### Member order
@@ -62,8 +58,7 @@ In headers, the `.generated.h` include stays last.
 
 ### 1. Inspect
 
-- Inspect the affected module, its build configuration, nearby tests, and the engine version.
-- Check the Epic C++ Coding Standard matching the project's version.
+Inspect the affected module, its build configuration, nearby tests, and the engine version.
 
 ### 2. Test
 

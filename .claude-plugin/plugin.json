@@ -1,6 +1,6 @@
 {
   "name": "praxinos-dev",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Shared Claude skills for all Praxinos developers: the UE5 development workflow.",
   "author": {
     "name": "Praxinos"
