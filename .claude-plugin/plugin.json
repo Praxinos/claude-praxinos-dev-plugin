@@ -1,7 +1,7 @@
 {
   "name": "praxinos-dev",
   "version": "1.0.0",
-  "description": "Shared Claude skills for all Praxinos developers: general agent working rules and the UE5 development workflow.",
+  "description": "Shared Claude skills for all Praxinos developers: the UE5 development workflow.",
   "author": {
     "name": "Praxinos"
   },

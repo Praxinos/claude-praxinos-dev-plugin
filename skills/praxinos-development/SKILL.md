@@ -5,7 +5,11 @@ description: Apply when creating or editing Unreal Engine 5 project, plugin, or 
 
 # Praxinos Development Skill
 
-Apply this workflow to UE5 code edits, including C++, C# build tooling, and code used by Unreal plugins. Use the project's UE version and existing conventions. Keep the work scoped to the user's requested change. Do not use the `auto` keyword in code you create or modify. Write documentation directly in the code as Doxygen comments; do not create or update documentation in any other form.
+Apply this workflow to UE5 code edits, including C++, C# build tooling, and code used by Unreal plugins. Use the project's UE version and existing conventions. Keep the work scoped to the user's requested change. Do not use the `auto` keyword in code you create or modify. Document the code with Doxygen comments. General behavior and architecture may be documented in the `Documentation/Doxygen` folder.
+
+Preserve the line-ending format (LF or CRLF) required by the repository's Git configuration when editing files.
+
+For any compilation, redirect the command output to null to enforce a no-log compilation. If the no-log compilation failed, compile again normally to retrieve errors.
 
 When a function would evaluate the same accessor, lookup, or cast more than once to reach the same data (in successive statements, or in a loop condition or body), store the result once in a local variable, using a reference for containers, and reuse it. Keep separate calls when the result can differ between evaluations: different arguments, data that depends on the loop iteration, or data modified in between.
 
