@@ -1,0 +1,16 @@
+{
+  "name": "praxinos",
+  "owner": {
+    "name": "Praxinos"
+  },
+  "metadata": {
+    "description": "Praxinos internal Claude plugins."
+  },
+  "plugins": [
+    {
+      "name": "praxinos-dev",
+      "source": "./",
+      "description": "Shared Claude skills for all Praxinos developers: general agent working rules and the UE5 development workflow."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "praxinos-dev",
+  "version": "1.0.0",
+  "description": "Shared Claude skills for all Praxinos developers: general agent working rules and the UE5 development workflow.",
+  "author": {
+    "name": "Praxinos"
+  },
+  "repository": "https://github.com/Praxinos/claude-praxinos-dev-plugin",
+  "license": "MIT",
+  "keywords": ["praxinos", "unreal-engine", "ue5", "skills"]
+}
